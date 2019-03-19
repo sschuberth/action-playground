@@ -4,6 +4,6 @@ workflow "Release on annotated tags" {
 }
 
 action "Filters for GitHub Actions" {
-  uses = "sschuberth/actions-bin/filter@master"
-  args = "tag v*-release"
+  uses = "sschuberth/actions-bin/filter@filter-annotated-tags"
+  args = "tag_annotated v*-release"
 }
