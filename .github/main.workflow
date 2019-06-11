@@ -15,4 +15,5 @@ workflow "Automatic Rebase" {
 
 action "Rebase" {
   uses = "cirrus-actions/rebase@latest"
+  secrets = ["GITHUB_TOKEN"]
 }
