@@ -7,3 +7,12 @@ action "Filters for GitHub Actions" {
   uses = "sschuberth/actions-bin/filter@filter-annotated-tags"
   args = "tag_annotated v*-release"
 }
+
+workflow "Automatic Rebase" {
+  on = "issue_comment"
+  resolves = ["Rebase"]
+}
+
+action "Rebase" {
+  uses = "cirrus-actions/rebase@latest"
+}
