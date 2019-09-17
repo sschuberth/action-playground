@@ -1,7 +1,6 @@
 on:
   issue_comment:
-    body:
-      - /rebase
+    body: /rebase
 
 jobs:
   rebase:
