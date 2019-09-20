@@ -7,10 +7,11 @@ jobs:
     name: Rebase
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+    - name: Checkout Action
       if: github.event.issue.pull_request != null && github.event.action == 'created' && github.event.comment.body == '/rebase'
-    - name: Rebase
+      uses: actions/checkout@master
+    - name: Rebase Action
+      if: success()
       uses: docker://cirrusactions/rebase:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
