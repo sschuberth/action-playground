@@ -11,7 +11,7 @@ jobs:
       if: github.event.issue.pull_request != null && github.event.action == 'created' && github.event.comment.body == '/rebase'
       uses: actions/checkout@master
     - name: Rebase Action
-      if: success()
+      if: github.event.issue.pull_request != null && github.event.action == 'created' && github.event.comment.body == '/rebase'
       uses: docker://cirrusactions/rebase:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
