@@ -1,3 +1,5 @@
+name: Automatic Rebase
+
 on:
   issue_comment:
     comment:
@@ -6,6 +8,7 @@ on:
 
 jobs:
   rebase:
+    name: Rebase
     runs-on: ubuntu-latest
     steps:
     - if: github.event.comment.body == '/rebase'
